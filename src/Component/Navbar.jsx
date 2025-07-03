@@ -46,7 +46,12 @@ export default function Navbar() {
           <form className="d-flex" role="search">
             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
             <button className="btn btn-outline-success me-2" type="submit">Search</button>
-            <button className="btn btn-account" type="submit">Account</button>
+           
+           <button style={{ color: 'blue' }} className="btn btn-account" type="submit">
+              Account
+            </button>
+
+
           </form>
           <i className="bi bi-person-circle ms-3"></i>
         </div>
