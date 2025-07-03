@@ -3,8 +3,13 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import {BrowserRouter, Routes, Route} from "react-router-dom";
+
+import { BrowserRouter as Router } from 'react-router-dom';
+
 import Navbar from './Component/Navbar';
 import Footer from './Component/footer';
+import Home from './Component/Home';
+import HomeSlider from './Component/HomeSlider';
 
 
 
@@ -13,14 +18,22 @@ function App() {
 
   return (
     <>
-        <BrowserRouter>
+       
+        <Router>
+        <Navbar/>
         <Routes>
-          <Route path="/navbar" element={<Navbar/>}/>
-          <Route path="/footer" element={<Footer/>}/>
+          <Route path="/" element={<HomeSlider/>}/>
+          <Route path="/" element={<Home/>}/>
+
+
+          {/* <Route path="/footer" element={<Footer/>}/> */}
 
         </Routes>
-        </BrowserRouter>
-      
+        <Footer/>
+
+        </Router>
+                        {/* <Route path="/footer" element={<Footer/>}/> */}
+
    
     </>
   )

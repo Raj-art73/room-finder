@@ -1,34 +1,56 @@
-import React from 'react'
+import React, { useState } from 'react';
 
 export default function Navbar() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+    document.body.classList.toggle('bg-dark');
+    document.body.classList.toggle('text-white');
+  };
+
   return (
-   <>
-
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-   </>
-  )
+    <>
+      <nav className={`navbar navbar-expand-lg ${darkMode ? 'navbar-dark bg-dark' : 'bg-body-tertiary'} `}>
+        <div className="container-fluid">
+          <a className="navbar-brand" href="/">Room-Finder</a>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <a className="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+              <li className="nav-item dropdown">
+                <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Service
+                </a>
+                <ul className="dropdown-menu">
+                  <li><a className="dropdown-item" href="#">Single Room</a></li>
+                  <li><a className="dropdown-item" href="#">Apartment</a></li>
+                  <li><a className="dropdown-item" href="#">House</a></li>
+                </ul>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/">Features</a>
+              </li>
+              <li className="nav-item">
+                <button className="btn btn-sm btn-outline-secondary ms-2" onClick={toggleDarkMode}>
+                  {darkMode ? 'Light Mode' : 'Dark Mode'}
+                </button>
+              </li>
+            </ul>
+          </div>
+          <form className="d-flex" role="search">
+            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+            <button className="btn btn-outline-success me-2" type="submit">Search</button>
+            <button className="btn btn-account" type="submit">Account</button>
+          </form>
+          <i className="bi bi-person-circle ms-3"></i>
+        </div>
+      </nav>
+    </>
+  );
 }

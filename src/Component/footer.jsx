@@ -3,6 +3,13 @@ import React from 'react';
 function Footer() {
   return (
     <footer>
+
+          <div className="text-center mb-12">
+          <p className="text-xl md:text-2xl opacity-90 max-w-2xl mx-auto">
+            Discover rooms, apartments, and houses for rent in your ideal location
+          </p>
+        </div>
+
       <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', maxWidth: '1200px', margin: '0 auto' }}>
         
         {/* Company Info */}
