@@ -92,7 +92,7 @@ export default function Home() {
                 location: "Jorpati, Kathmandu",
                 bed: 2,
                 bath: 1,
-                img: "https://via.placeholder.com/400x200?text=Room+1",
+                img: "",
               },
               {
                 price: "Rs6,000/Month",
@@ -100,7 +100,7 @@ export default function Home() {
                 location: "Bafal, Kathmandu",
                 bed: 1,
                 bath: 1,
-                img: "https://via.placeholder.com/400x200?text=Room+2",
+                img: "",
               },
               {
                 price: "Rs12,000/Month",
@@ -108,7 +108,7 @@ export default function Home() {
                 location: "Tokha, Kathmandu",
                 bed: 1,
                 bath: 1,
-                img: "https://via.placeholder.com/400x200?text=Room+3",
+                img: "",
               },
             ].map((room, index) => (
               <div key={index} className="property-card">
