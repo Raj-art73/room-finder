@@ -6,6 +6,7 @@ import Navbar from './Component/Navbar';
 import Footer from './Component/footer';
 import HomeSlider from './Component/HomeSlider';
 import Home from './Component/Home';
+import Single_room from './Component/Single_room';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -16,16 +17,19 @@ function App() {
 
       {/* Main content */}
       <Routes>
-        <Route path="/" element={
-          <>
-            <HomeSlider />
-            <Home />
-          </>
-        } />
-        {/* You can add more routes here if needed */}
+        <Route
+          path="/"
+          element={
+            <>
+              <HomeSlider />
+              <Home />
+            </>
+          }
+        />
+        <Route path="/single_room" element={<Single_room />} />
+        {/* Add more routes here if needed */}
       </Routes>
 
-      {/* Footer shown on all pages */}
       <Footer />
     </Router>
   );

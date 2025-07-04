@@ -34,8 +34,9 @@ function Footer() {
         {/* Social or Contact Info (optional) */}
         <div style={{ flex: '1 1 250px', marginBottom: '20px' }}>
           <h3 style={{ fontSize: '18px', marginBottom: '10px' }}>Get in Touch</h3>
-          <p>Email: info@csds.com</p>
-          <p>Phone: +977-1-1234567</p>
+         <p>Email: <a href="mailto:munnarajyad@gmail.com" class="text-blue-600 underline">munnarajyad@gmail.com</a></p>
+          <p>Address: Kathmandu, Nepal</p>
+          <p>Phone: +977 9762918219</p>
         </div>
       </div>
     </footer>

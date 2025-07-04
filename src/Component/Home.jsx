@@ -92,7 +92,7 @@ export default function Home() {
                 location: "Jorpati, Kathmandu",
                 bed: 2,
                 bath: 1,
-                img: "",
+                img: "https://tse4.mm.bing.net/th/id/OIP.OaXV1XU2WiCIgCuO3NPmhQHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
               },
               {
                 price: "Rs6,000/Month",
@@ -115,7 +115,7 @@ export default function Home() {
                 <div className="relative">
                   <img src={room.img} alt={room.title} className="property-img" />
                   {/* <div className="badge featured">FEATURED</div> */}
-                  <div className="badge for-rent">FOR RENT</div>
+                  {/* <div className="badge for-rent">FOR RENT</div> */}
                 </div>
                 <div className="property-body">
                   <h2 className="text-lg font-bold text-gray-900">{room.price}</h2>
