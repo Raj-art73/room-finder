@@ -34,7 +34,7 @@ export default function Navbar() {
                   <li><a className="dropdown-item" href="#">House</a></li>
                   <Link className="dropdown-item" to="/Single_room">Single Room</Link>
                 </ul>
-              </li>
+              </li> 
               <li className="nav-item">
                 <a className="nav-link" href="/">Features</a>
               </li>

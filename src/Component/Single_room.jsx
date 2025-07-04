@@ -15,11 +15,9 @@ export default function Single_room() {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             margin: 10px auto;
             height: auto;
-            max-width: 550px; /*  Make it smaller */
+            max-width: 550px;
             width: 100%;
             }
-
-
 
           .property-card:hover {
             transform: translateY(-5px);
@@ -96,72 +94,103 @@ export default function Single_room() {
             justify-content: space-between;
           }
 
+          /* Grid layout - one left, one right */
+          .rooms-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            justify-items: stretch;
+          }
+
+          @media (max-width: 1200px) {
+            .rooms-container {
+              grid-template-columns: 1fr 1fr;
+              gap: 15px;
+            }
+          }
+
           @media (max-width: 768px) {
             .property-card {
               flex-direction: column;
+              max-width: 100%;
             }
 
             .property-img {
               width: 100%;
               height: 200px;
             }
+
+            .rooms-container {
+              grid-template-columns: 1fr;
+              gap: 20px;
+            }
           }
         `}
       </style>
 
       <div className="bg-blue-50 min-h-screen py-12">
-  <div className="container mx-auto px-4">
-    <div className="text-center mb-12">
-      <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-fade-in">
-        Find Your Perfect Single-Room
-      </h1>
-    </div>
-
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {[
-        {
-          price: "Rs6,000/Month",
-          title: "1 Single Room Rent in Bafal, Syuchatar",
-          location: "Bafal, Kathmandu",
-          bed: 1,
-          bath: 1,
-          img: "https://tse4.mm.bing.net/th/id/OIP.OaXV1XU2WiCIgCuO3NPmhQHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
-        },
-        {
-          price: "Rs7,000/Month",
-          title: "Single Room Available in Baneshwor",
-          location: "Baneshwor, Kathmandu",
-          bed: 1,
-          bath: 1,
-          img: "https://tse3.mm.bing.net/th/id/OIP.sXU2B-xyzE4JUK6XpB2eGQHaE7?pid=ImgDet&w=1200&h=800&rs=1", // Example image
-        },
-      ].map((room, index) => (
-        <div key={index} className="property-card">
-          <div className="property-body">
-            <h2 className="text-lg font-bold text-gray-900">{room.price}</h2>
-            <div className="property-title">{room.title}</div>
-            <p className="property-location">{room.location}</p>
-            <div className="room-info">
-              <span>🛏 {room.bed}</span>
-              <span>🛁 {room.bath}</span>
-            </div>
-            <button className="details-btn">Details</button>
-            <button className="Rent-btn">Rent Now</button>
-            <div className="property-footer">
-              <span>🏠 ROOM</span>
-              <span>📅 1 week ago</span>
-            </div>
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-6xl font-bold mb-4">
+              Find Your Perfect Single-Room
+            </h1>
           </div>
-          <div className="relative">
-            <img src={room.img} alt={room.title} className="property-img" />
-          
+
+          {/* Updated container to force single row */}
+          <div className="rooms-container">
+            {[
+              {
+                price: "Rs6,000/Month",
+                title: "1 Single Room Rent in Bafal, Syuchatar",
+                location: "Bafal, Kathmandu",
+                bed: 1,
+                bath: 1,
+                img: "https://tse4.mm.bing.net/th/id/OIP.OaXV1XU2WiCIgCuO3NPmhQHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+              },
+              {
+                price: "Rs7,000/Month",
+                title: "Single Room Available in Baneshwor",
+                location: "Baneshwor, Kathmandu",
+                bed: 1,
+                bath: 1,
+                img: "https://tse3.mm.bing.net/th/id/OIP.sXU2B-xyzE4JUK6XpB2eGQHaE7?pid=ImgDet&w=1200&h=800&rs=1",
+              },
+
+                {
+                price: "Rs6,000/Month",
+                title: "1 Single Room Rent in Bafal, Syuchatar",
+                location: "Bafal, Kathmandu",
+                bed: 1,
+                bath: 1,
+                img: "https://tse4.mm.bing.net/th/id/OIP.OaXV1XU2WiCIgCuO3NPmhQHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+              },
+
+              
+            ].map((room, index) => (
+              <div key={index} className="property-card">
+                <div className="property-body">
+                  <h2 className="text-lg font-bold text-gray-900">{room.price}</h2>
+                  <div className="property-title">{room.title}</div>
+                  <p className="property-location">{room.location}</p>
+                  <div className="room-info">
+                    <span>🛏 {room.bed}</span>
+                    <span>🛁 {room.bath}</span>
+                  </div>
+                  <button className="details-btn">Details</button>
+                  <button className="Rent-btn">Rent Now</button>
+                  <div className="property-footer">
+                    <span>🏠 ROOM</span>
+                    <span>📅 1 week ago</span>
+                  </div>
+                </div>
+                <div className="relative">
+                  <img src={room.img} alt={room.title} className="property-img" />
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      ))}
-    </div>
-  </div>
-</div>
-
+      </div>
     </>
   );
 }
