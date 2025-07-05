@@ -14,6 +14,7 @@ export default function Features() {
             height: 100%;
             display: flex;
             flex-direction: column;
+            color: #1f2937;
           }
 
           .feature-card:hover {
@@ -35,12 +36,10 @@ export default function Features() {
           .feature-title {
             font-size: 20px;
             font-weight: bold;
-            color: #1f2937;
             margin-bottom: 12px;
           }
 
           .feature-description {
-            color: #6b7280;
             line-height: 1.6;
             flex-grow: 1;
           }
@@ -103,6 +102,7 @@ export default function Features() {
             text-align: center;
             position: relative;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            color: #1f2937;
           }
 
           .step-number {
@@ -154,6 +154,41 @@ export default function Features() {
             .process-grid {
               grid-template-columns: 1fr;
             }
+          }
+
+          /* Dark mode overrides */
+          .dark-mode {
+            background-color: #121212;
+            color: #f1f1f1;
+          }
+
+          .dark-mode .feature-card,
+          .dark-mode .process-step {
+            background-color: #1f1f1f;
+            color: #f1f1f1;
+          }
+
+          .dark-mode .feature-title,
+          .dark-mode .feature-description,
+          .dark-mode h2,
+          .dark-mode h3,
+          .dark-mode p {
+            color: #f1f1f1 !important;
+          }
+
+          .dark-mode .cta-section {
+            background: linear-gradient(135deg, #1f4037 0%, #99f2c8 100%);
+            color: #fff;
+          }
+
+          .dark-mode .cta-button {
+            background: #fff;
+            color: #1f4037;
+          }
+
+          .dark-mode .stats-card {
+            background: #2a2a2a;
+            color: #f1f1f1;
           }
         `}
       </style>
@@ -244,7 +279,96 @@ export default function Features() {
             </div>
           </div>
 
+          {/* Stats Section */}
+          <div className="text-center mt-20 mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Platform Statistics
+            </h2>
+            <p className="text-lg text-gray-600">
+              Numbers that speak for our success
+            </p>
           </div>
+
+          <div className="stats-grid">
+            <div className="stats-card">
+              <div className="stat-number">50+</div>
+              <div className="stat-label">Active Listings</div>
+            </div>
+            <div className="stats-card">
+              <div className="stat-number">10+</div>
+              <div className="stat-label">Happy Tenants</div>
+            </div>
+            <div className="stats-card">
+              <div className="stat-number">50+</div>
+              <div className="stat-label">Locations Covered</div>
+            </div>
+            <div className="stats-card">
+              <div className="stat-number">24/7</div>
+              <div className="stat-label">Customer Support</div>
+            </div>
+          </div>
+
+          {/* How It Works */}
+          <div className="text-center mt-20 mb-16">
+            <h2 className="text-4xl  mb-4">
+              How It Works
+            </h2>
+            <p className="text-lg ">
+              Simple steps to find your perfect room
+            </p>
+          </div>
+
+          <div className="process-grid">
+            <div className="process-step">
+              <div className="step-number">1</div>
+              <div className="process-icon">🔍</div>
+              <h3 className="text-xl font-bold mb-3">Search</h3>
+              <p className="text-gray-600">
+                Use our advanced search filters to find rooms that match your preferences and budget
+              </p>
+            </div>
+
+            <div className="process-step">
+              <div className="step-number">2</div>
+              <div className="process-icon">📞</div>
+              <h3 className="text-xl font-bold mb-3">Contact</h3>
+              <p className="text-gray-600">
+                Reach out to property owners directly through our secure messaging system
+              </p>
+            </div>
+
+            <div className="process-step">
+              <div className="step-number">3</div>
+              <div className="process-icon">👀</div>
+              <h3 className="text-xl font-bold mb-3">Visit</h3>
+              <p className="text-gray-600">
+                Schedule a viewing to see the property in person and ask any questions
+              </p>
+            </div>
+
+            <div className="process-step">
+              <div className="step-number">4</div>
+              <div className="process-icon">🏠</div>
+              <h3 className="text-xl font-bold mb-3">Move In</h3>
+              <p className="text-gray-600">
+                Complete the rental process and enjoy your new home with peace of mind
+              </p>
+            </div>
+          </div>
+
+          {/* CTA Section */}
+          <div className="cta-section">
+            <h2 className="text-4xl font-bold mb-4">
+              Ready to Find Your Perfect Room?
+            </h2>
+            <p className="text-xl mb-6">
+              Join thousands of satisfied tenants who found their ideal living space through our platform
+            </p>
+            <button className="cta-button">
+              Start Your Search Today
+            </button>
+          </div>
+        </div>
       </div>
     </>
   );
