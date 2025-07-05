@@ -7,6 +7,7 @@ import Footer from './Component/footer';
 import HomeSlider from './Component/HomeSlider';
 import Home from './Component/Home';
 import Single_room from './Component/Single_room';
+import Features from './Component/Features'; // ✅ Add this import
 
 function App() {
   const [count, setCount] = useState(0);
@@ -27,7 +28,7 @@ function App() {
           }
         />
         <Route path="/single_room" element={<Single_room />} />
-        {/* Add more routes here if needed */}
+        <Route path="/features" element={<Features />} /> 
       </Routes>
 
       <Footer />

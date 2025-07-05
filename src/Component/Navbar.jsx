@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+
 export default function Navbar() {
   const [darkMode, setDarkMode] = useState(false);
 
@@ -29,15 +30,16 @@ export default function Navbar() {
                   Service
                 </a>
                 <ul className="dropdown-menu">
-                  {/* <li><a className="dropdown-item" href="/Single_room">Single Room</a></li> */}
                   <li><a className="dropdown-item" href="#">Apartment</a></li>
                   <li><a className="dropdown-item" href="#">House</a></li>
                   <Link className="dropdown-item" to="/Single_room">Single Room</Link>
                 </ul>
-              </li> 
-              <li className="nav-item">
-                <a className="nav-link" href="/">Features</a>
               </li>
+              <li className="nav-item">
+                <Link to="/Features" className="nav-link">Features</Link>
+              </li>
+
+              
               <li className="nav-item">
                 <button className="btn btn-sm btn-outline-secondary ms-2" onClick={toggleDarkMode}>
                   {darkMode ? 'Light Mode' : 'Dark Mode'}
