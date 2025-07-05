@@ -7,7 +7,7 @@ import Footer from './Component/footer';
 import HomeSlider from './Component/HomeSlider';
 import Home from './Component/Home';
 import Single_room from './Component/Single_room';
-import Features from './Component/Features'; // ✅ Add this import
+import Features from './Component/features'; 
 
 function App() {
   const [count, setCount] = useState(0);

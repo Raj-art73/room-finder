@@ -244,17 +244,7 @@ export default function Features() {
             </div>
           </div>
 
-          {/* Stats Section */}
-          <div className="text-center mt-20 mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Platform Statistics
-            </h2>
-            <p className="text-lg text-gray-600">
-              Numbers that speak for our success
-            </p>
           </div>
-
-        </div>
       </div>
     </>
   );
